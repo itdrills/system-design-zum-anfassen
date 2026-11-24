@@ -1,0 +1,9 @@
+[Unit]
+Description=zaehler: Klicks aus NATS nach PostgreSQL
+After=network-online.target nats.service
+[Service]
+DynamicUser=yes
+ExecStart=/usr/local/bin/zaehler
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target

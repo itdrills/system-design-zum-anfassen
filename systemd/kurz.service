@@ -1,0 +1,11 @@
+[Unit]
+Description=kurz URL-Shortener
+After=network-online.target
+[Service]
+Environment=KURZ_INSTANZ=s1
+Environment=KURZ_DB=postgres://kurz:lab-kurz-123@s3:5432/kurz
+DynamicUser=yes
+ExecStart=/usr/local/bin/kurz
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
